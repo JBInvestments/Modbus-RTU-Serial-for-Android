@@ -2,7 +2,7 @@
 This repository includes Android code that is needed to communicate modbus RTU serial through the microUSB port. 
 
 For this code to work,there are specific android system files that need to be changed. There area few tablets out 
-there that already include this change, but most do not.  To change anysystem files an Android device needs to be rooted.
+there that already include this change, but most do not.  To change any system files an Android device needs to be rooted.
 
 The two files that need to be changed are:
   - android.hardware.usb.host.xml
