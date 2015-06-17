@@ -1,0 +1,44 @@
+import android.content.Context;
+
+import java.io.IOException;
+
+public class modBusTestExample{
+
+    static Context mContext ;
+
+    public void setContext(Context context)
+    {
+        mContext = context;
+    }
+
+    public int[] getDataPointFromSlave(int ref, int count) throws IOException {
+        int[] dataArray = new int[120];
+        modBusUSB myModbusUSB = new modBusUSB(mContext);
+        
+        byte SLAVE_ID = 1; // Slave being queried
+        myModbusUSB.Connect();
+
+        if ((myModbusUSB != null) & (myModbusUSB.Connected())) {
+
+            try {
+
+                myModbusUSB.ReadHoldingRegisters(SLAVE_ID, ref+1, count);
+                    
+                    dataArray = myModbusUSB.ReadRegPDU();
+                    while(dataArray.length == 0){
+                        Thread.sleep(500);
+                        dataArray = myModbusUSB.ReadRegPDU();
+                    }
+            }catch (IOException k) {
+                // TODO Auto-generated catch block
+                k.printStackTrace();
+            }
+            catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }        
+        myModbusUSB.Disconnect();
+        return dataArray;
+    }
+}
