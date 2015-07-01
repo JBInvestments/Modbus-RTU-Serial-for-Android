@@ -12,14 +12,14 @@ These files are located in the permissions folder. The file path to this folder 
   
 The content for android.hardware.usb.host.xml needs to be:
 
-<permissions>
+"<permissions>
   <feature name=?android.hardware.usb.host?/>
-  </permissions>
+  </permissions>"
   
   
 The content for tablet_core_hardware.xml needs to be:
 
-<?xml version="1.0" encoding="utf-8"?>
+"<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2010 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -78,7 +78,7 @@ The content for tablet_core_hardware.xml needs to be:
           android.hardware.sensor.gyroscope.xml -->
      <!-- GSM phones must also include android.hardware.telephony.gsm.xml -->
      <!-- CDMA phones must also include android.hardware.telephony.cdma.xml -->
-</permissions>
+</permissions>"
 
 
 
